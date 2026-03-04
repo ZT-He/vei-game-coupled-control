@@ -22,7 +22,7 @@ This project demonstrates a reproducible **vehicle–e-scooter interaction (VEI)
 
 ## Framework Overview
 
-![VEI framework pipeline (Fig. 3)](assets/figures/fig3_framework.png)
+![VEI framework pipeline (Fig. 3)](assets/figures/VEI-game_framework.png)
 
 The workflow follows a three-stage loop: scenario identification → game-based simulation modeling → quantitative + qualitative evaluation.
 
