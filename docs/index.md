@@ -115,15 +115,3 @@ At each step, the ego selects an action; the rider responds via a one-step best 
 
 
 ---
-
-## Citation
-
-If you use this framework, please cite the paper:
-
-```bibtex
-@inproceedings{He2026VEIStackelberg,
-  title={Stackelberg Game Modeling and Decision-Making for Vehicle-E-Scooter Interaction},
-  author={...},
-  booktitle={IEEE International Conference on Intelligent Transportation Systems (ITSC)},
-  year={2026}
-}
