@@ -30,14 +30,14 @@ The workflow follows a three-stage loop: scenario identification → game-based 
 
 ## Interaction Model (Stackelberg)
 
-At each step, the ego selects an action; the rider responds via a one-step best response under a latent rider type (e.g., Aggressive vs Conservative/Normal). The leader can be belief-aware, and replans in receding horizon.
+At each step, the ego selects an action; the rider responds via a one-step best response under a latent rider type (e.g., Aggressive vs Normal). The leader can be belief-aware, and replans in a receding horizon.
 
 ---
 
 ## Planners
 
 ### Rule-based baselines
-- **Rule1D**: finite-state logic (cruise / brake) using predicted TTC as a safety gate.
+- **Rule1D**: finite-state logic (cruise/brake) using predicted TTC as a safety gate.
 - **Rule2D**: adds a lightweight minimum-risk lateral reference selector before committing to braking.
 
 ### Optimization-based planners
@@ -52,10 +52,10 @@ At each step, the ego selects an action; the rider responds via a one-step best 
 ## Scenarios
 
 ### 1) Intersection crossing
-![Intersection layout](assets/figures/fig2a_intersection.png)
+![Intersection layout](assets/figures/VEI-game_configuration_a.png)
 
 ### 2) Straight-road lane change (cut-in)
-![Straight-road layout](assets/figures/fig2b_straightroad.png)
+![Straight-road layout](assets/figures/VEI-game_configuration_b.png)
 
 ---
 
@@ -72,13 +72,36 @@ At each step, the ego selects an action; the rider responds via a one-step best 
 |  | **MPC1D** | **0.0** | **1.000** |
 |  | **MPC2D** | **0.0** | **1.000** |
 
+
+---
+
+
+## Qualitative Example Figure (placeholder)
+
+![Qualitative comparison (Fig. 6)](assets/figures/inter_qual_scrns.png)
+
 ---
 
 ## Simulation Videos (placeholders)
 
 ### Intersection — controller comparison
 <video controls width="100%">
-  <source src="assets/videos/intersection_placeholder.mp4" type="video/mp4">
+  <source src="assets/videos/rule1d_simulation_video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video controls width="100%">
+  <source src="assets/videos/mpc1d_simulation_video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video controls width="100%">
+  <source src="assets/videos/rule2d_simulation_video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video controls width="100%">
+  <source src="assets/videos/mpc2d_simulation_video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -90,11 +113,6 @@ At each step, the ego selects an action; the rider responds via a one-step best 
 
 > **Note:** Replace the placeholder MP4 files in `assets/videos/`.
 
----
-
-## Qualitative Example Figure (placeholder)
-
-![Qualitative comparison (Fig. 6)](assets/figures/fig6_qualitative_placeholder.png)
 
 ---
 
