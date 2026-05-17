@@ -22,7 +22,8 @@ This project demonstrates a reproducible **vehicle–e-scooter interaction (VEI)
 
 ## Framework Overview
 
-![VEI framework pipeline (Fig. 3)](assets/figures/VEI-game_framework.png)
+[//]: ![VEI framework pipeline (Fig. 3)](assets/figures/VEI-game_framework.png)
+<img src="assets/figures/VEI-game_framework.png" alt="VEI framework pipeline (Fig. 3)" style="width:50%; height:auto;" />
 
 The workflow follows a three-stage loop: scenario identification → game-based simulation modeling → quantitative + qualitative evaluation.
 
@@ -80,36 +81,50 @@ At each step, the ego selects an action; the rider responds via a one-step best 
 
 ![Qualitative comparison (Fig. 6)](assets/figures/inter_qual_scrns.png)
 
-Qualitative comparison (intersection crossing, aggressive rider). All rows start from the same initial conditions and use the same onboard detection timing. 
-    Row 1: Rule1D (longitudinal FSM). 
-    Row 2: Rule2D (coupled lon–lat FSM with minimum-risk path selection). 
-    Row 3: MPC1D (receding-horizon Stackelberg, longitudinal only). 
-    Row 4: MPC2D (two-layer, contract-based hierarchical planner).
+Qualitative comparison (intersection crossing, aggressive rider). All rows start from the same initial conditions and use the same onboard detection timing.
+
+- **Row 1:** **Rule1D** (longitudinal FSM).  
+- **Row 2:** **Rule2D** (coupled lon–lat FSM with minimum-risk path selection).  
+- **Row 3:** **MPC1D** (receding-horizon Stackelberg, longitudinal only).  
+- **Row 4:** **MPC2D** (two-layer, contract-based hierarchical planner).
+
 The colored trajectory tail indicates recent risk level (green: low, yellow: medium, red: critical).
+
 ---
 
 ## Simulation Videos
 
 ### Intersection — controller comparison
+#### Rule1D — Longitudinal FSM baseline
+Conservative cruise/brake logic with TTC-based safety gating.
+
 <video controls width="100%">
   <source src="assets/videos/rule1d_simulation_video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-<video controls width="100%">
-  <source src="assets/videos/mpc1d_simulation_video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+#### Rule2D — FSM with minimum-risk lateral path
+Adds lightweight lane-level detour selection to reduce conflict risk.
 
 <video controls width="100%">
   <source src="assets/videos/rule2d_simulation_video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
+#### MPC1D — Receding-horizon Stackelberg (longitudinal-only)
+Belief-weighted game evaluation over candidate accelerations.
+
+<video controls width="100%">
+  <source src="assets/videos/mpc1d_simulation_video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+#### MPC2D — Contract-based hierarchical planning (proposed)
+Selects a strategic contract and executes within corridor constraints with safety overrides.
+
 <video controls width="100%">
   <source src="assets/videos/mpc2d_simulation_video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
 
 ---
