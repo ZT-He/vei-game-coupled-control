@@ -76,13 +76,18 @@ At each step, the ego selects an action; the rider responds via a one-step best 
 ---
 
 
-## Qualitative Example Figure (placeholder)
+## Qualitative Example Screenshots
 
 ![Qualitative comparison (Fig. 6)](assets/figures/inter_qual_scrns.png)
-
+Qualitative comparison (intersection crossing, aggressive rider). All rows start from the same initial conditions and use the same onboard detection timing. 
+    Row 1: Rule1D (longitudinal FSM). 
+    Row 2: Rule2D (coupled lon–lat FSM with minimum-risk path selection). 
+    Row 3: MPC1D (receding-horizon Stackelberg, longitudinal only). 
+    Row 4: MPC2D (two-layer, contract-based hierarchical planner).
+The colored trajectory tail indicates recent risk level (green: low, yellow: medium, red: critical).
 ---
 
-## Simulation Videos (placeholders)
+## Simulation Videos
 
 ### Intersection — controller comparison
 <video controls width="100%">
