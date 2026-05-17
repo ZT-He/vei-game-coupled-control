@@ -79,6 +79,7 @@ At each step, the ego selects an action; the rider responds via a one-step best 
 ## Qualitative Example Screenshots
 
 ![Qualitative comparison (Fig. 6)](assets/figures/inter_qual_scrns.png)
+
 Qualitative comparison (intersection crossing, aggressive rider). All rows start from the same initial conditions and use the same onboard detection timing. 
     Row 1: Rule1D (longitudinal FSM). 
     Row 2: Rule2D (coupled lon–lat FSM with minimum-risk path selection). 
@@ -109,14 +110,6 @@ The colored trajectory tail indicates recent risk level (green: low, yellow: med
   <source src="assets/videos/mpc2d_simulation_video.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-
-### Straight-road — controller comparison
-<video controls width="100%">
-  <source src="assets/videos/straightroad_placeholder.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-> **Note:** Replace the placeholder MP4 files in `assets/videos/`.
 
 
 ---
