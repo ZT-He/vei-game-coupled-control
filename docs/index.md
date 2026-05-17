@@ -22,7 +22,7 @@ This project demonstrates a reproducible **vehicle–e-scooter interaction (VEI)
 
 ## Framework Overview
 
-<img src="assets/figures/VEI-game_framework.png" alt="VEI framework pipeline (Fig. 3)" style="width:50%; height:auto;" />
+<img src="assets/figures/VEI-game_framework.png" alt="VEI framework pipeline (Fig. 3)" style="width:75%; height:auto;" />
 
 The workflow follows a three-stage loop: scenario identification → game-based simulation modeling → quantitative + qualitative evaluation.
 
@@ -52,10 +52,10 @@ At each step, the ego selects an action; the rider responds via a one-step best 
 ## Scenarios
 
 ### 1) E-scooter intersection crossing
-<img src="assets/figures/VEI-game_configuration_a.png" alt="Intersection layout" style="width:50%; height:auto;" />
+<img src="assets/figures/VEI-game_configuration_a.png" alt="Intersection layout" style="width:35%; height:auto;" />
 
 ### 2) E-scooter straight-road lane change (cut-in)
-<img src="assets/figures/VEI-game_configuration_b.png" alt="Straight-road layout" style="width:50%; height:auto;" />
+<img src="assets/figures/VEI-game_configuration_b.png" alt="Straight-road layout" style="width:35%; height:auto;" />
 
 ---
 
