@@ -5,15 +5,15 @@ title: "VEI Stackelberg Game + Hierarchical Planning"
 # Stackelberg Game Modeling and Decision-Making for Vehicle–E-Scooter Interaction (VEI)
 
 This project demonstrates a reproducible **vehicle–e-scooter interaction (VEI)** simulation framework built around a **discrete-time Stackelberg game** and a set of collision-avoidance planners spanning:
-- **Rule-based vs optimization-based**
-- **Longitudinal-only (1D) vs coupled longitudinal–lateral (2D)**
+- **Rule-based vs Optimization-based**
+- **Longitudinal-only (1D) vs Coupled longitudinal–lateral (2D)**
 
-> Paper: *Stackelberg Game Modeling and Decision-Making for Vehicle-E-Scooter Interaction* (ITSC 2026 submission)
+> Paper: *Stackelberg Game Modeling and Decision-Making for Vehicle-E-Scooter Interaction* (in Proc. 2026 International Conference on Intelligent Transportation Systems (ITSC 2026), accepted, Naples, Italy, September 2026.)
 
 ---
 
 ## Highlights
-- **Game-based VEI**: ego vehicle as leader, e-scooter as type-conditioned follower (go / yield).
+- **Game-based VEI**: ego vehicle as leader, e-scooter as type-conditioned follower.
 - **Bounded perception**: detection gate to mimic late/partial awareness.
 - **Four planners**: Rule1D, Rule2D, MPC1D, MPC2D.
 - **MPC2D**: hierarchical “contract selection + contract-constrained execution” with safety overrides.
@@ -41,20 +41,20 @@ At each step, the ego selects an action; the rider responds via a one-step best 
 - **Rule2D**: adds a lightweight minimum-risk lateral reference selector before committing to braking.
 
 ### Optimization-based planners
-- **MPC1D**: belief-weighted Stackelberg evaluation over candidate accelerations (steering fixed).
+- **MPC1D**: belief-weighted Stackelberg evaluation over candidate accelerations.
 - **MPC2D (proposed)**: two-layer hierarchy:
-  1) **Strategic contract selection** (KEEP / YIELD / DETOUR_LEFT / DETOUR_RIGHT)
-  2) **Tactical execution** under hard corridor + speed-envelope constraints  
-  3) **Safety overrides** if execution becomes infeasible
+    1. **Strategic contract selection** (KEEP / YIELD / DETOUR\_LEFT / DETOUR\_RIGHT)
+    2. **Tactical execution** under hard corridor + speed-envelope constraints
+    3. **Safety overrides** if execution becomes infeasible
 
 ---
 
 ## Scenarios
 
-### 1) Intersection crossing
+### 1) E-scooter intersection crossing
 ![Intersection layout](assets/figures/VEI-game_configuration_a.png)
 
-### 2) Straight-road lane change (cut-in)
+### 2) E-scooter straight-road lane change (cut-in)
 ![Straight-road layout](assets/figures/VEI-game_configuration_b.png)
 
 ---
@@ -63,14 +63,14 @@ At each step, the ego selects an action; the rider responds via a one-step best 
 
 | Scenario | Controller | Collision rate (%) | Safety score |
 |---|---:|---:|---:|
-| Intersection | Rule1D | 8.6 | 0.914 |
-|  | Rule2D | 5.6 | 0.944 |
-|  | MPC1D | 2.4 | 0.976 |
-|  | **MPC2D** | **2.0** | **0.980** |
-| Straight road | Rule1D | 3.2 | 0.967 |
-|  | Rule2D | 1.2 | 0.984 |
-|  | **MPC1D** | **0.0** | **1.000** |
-|  | **MPC2D** | **0.0** | **1.000** |
+| Intersection | Rule1D | 11.6 | 0.884 |
+|  | Rule2D | 5.8 | 0.942 |
+|  | MPC1D | 3.2 | 0.968 |
+|  | **MPC2D** | **0.4** | **0.996** |
+| Straight road | Rule1D | 10.4 | 0.872 |
+|  | Rule2D | 4.8 | 0.909 |
+|  | MPC1D | 2.4 | 0.950 |
+|  | **MPC2D** | **1.2** | **0.954** |
 
 
 ---
