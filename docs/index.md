@@ -52,10 +52,10 @@ At each step, the ego selects an action; the rider responds via a one-step best 
 ## Scenarios
 
 ### 1) E-scooter intersection crossing
-<img src="assets/figures/VEI-game_configuration_a.png" alt="Intersection layout" style="width:40%; height:auto;" />
+<img src="assets/figures/VEI-game_configuration_a.png" alt="Intersection layout" style="width:60%; height:auto;" />
 
 ### 2) E-scooter straight-road lane change (cut-in)
-<img src="assets/figures/VEI-game_configuration_b.png" alt="Straight-road layout" style="width:40%; height:auto;" />
+<img src="assets/figures/VEI-game_configuration_b.png" alt="Straight-road layout" style="width:60%; height:auto;" />
 
 ---
 
